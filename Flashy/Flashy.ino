@@ -3,11 +3,11 @@
 #include <Easing.h>
 
 #define PIN               4
-#define LED_COUNT         120
+#define LED_COUNT         60
 #define INTERVAL_TIME_MIN 1
 
 #define MAX_SATURATION    99
-#define MAX_BRIGHTNESS    99
+#define MAX_BRIGHTNESS    50
 
 #define HUE_DIFF          30
 
@@ -19,6 +19,10 @@
 //   NEO_KHZ400  400 KHz bitstream (e.g. FLORA pixels)
 //   NEO_KHZ800  800 KHz bitstream (e.g. High Density LED strip)
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LED_COUNT, PIN, NEO_GRB + NEO_KHZ800);
+
+int randomHue() {
+  return random(0, 360);
+}
 
 int oldHue = randomHue();
 int mid = floor(LED_COUNT / 2);
@@ -70,9 +74,7 @@ void clearLEDs() {
   }
 }
 
-int randomHue() {
-  return random(0, 360);
-}
+
 
 uint32_t rgbColorFromHSB(int hue, int saturation, int brightness) {
   int rgb[3];
@@ -121,4 +123,3 @@ void flashy(uint32_t color, int count, int d) {
     delay(d);
   }
 }
-

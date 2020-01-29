@@ -3,7 +3,7 @@
 #include <Easing.h>
 
 #define PIN               4
-#define LED_COUNT         140
+#define LED_COUNT         60
 #define INTERVAL_TIME_MIN 1
 
 #define MAX_SATURATION    99

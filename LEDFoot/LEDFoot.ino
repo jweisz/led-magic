@@ -3,7 +3,7 @@
 #include <FHT.h>
 
 #define PIN               4
-#define LED_COUNT         120
+#define LED_COUNT         60
 
 #define FHT_N             256
 #define LOG_OUT           1
@@ -85,5 +85,3 @@ uint32_t rgbColorFromHSB(int hue, int saturation, int brightness) {
 	
 	return leds.Color(rgb[0], rgb[1], rgb[2]);
 }
-
-
